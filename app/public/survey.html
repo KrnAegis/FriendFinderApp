@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Friend Finder</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+      <h1>Survey Questions</h1>
+      <hr>
+        <h2>About you!</h2>
+        <h3>Name (Required)</h3>
+      <div class="input-group">
+      <span class="input-group-addon"></span>
+        <input type="text" class="form-control" id="name">
+      </div>
+      <h3>Link to your photo! (Required)</h3>
+      <div class="input-group">
+      <span class="input-group-addon"></span>
+        <input type="text" class="form-control" id="photo">
+      </div>
+      <hr>
+      <h2>Question 1</h2>
+      <h4>Some might consider your goal is, "unrealistic"</h4>
+      <select id="q1">
+        <option value="">Select an option</option>      
+        <option value="1">1-Strongly Disagree</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5-Strongly Agree</option>
+      </select>
+      <h2>Question 2</h2>
+      <h4>You are often misunderstood.</h4>
+      <select id="q2">
+        <option value="">Select an option</option>      
+        <option value="1">1-Strongly Disagree</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5-Strongly Agree</option>
+      </select>
+      <h2>Question 3</h2>
+      <h4>You think sacrificing few for the greater good is just.</h4>
+      <select id="q3">
+        <option value="">Select an option</option>      
+        <option value="1">1-Strongly Disagree</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5-Strongly Agree</option>
+      </select>
+      <h2>Question 4</h2>
+      <h4>You think nothing holds meaning, what you do ultimately doesn't matter.</h4>
+      <select id="q4">
+        <option value="">Select an option</option>      
+        <option value="1">1-Strongly Disagree</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5-Strongly Agree</option>
+      </select>
+      <h2>Question 5</h2>
+      <h4>Do you think everyone has good inside them?</h4>
+      <select id="q5">
+        <option value="">Select an option</option>      
+        <option value="1">1-Strongly Disagree</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5-Strongly Agree</option>
+      </select>
+      <h2>Question 6</h2>
+      <h4>Do you seek to gain power, through any means necessary?</h4>
+      <select id="q6">
+        <option value="">Select an option</option>      
+        <option value="1">1-Strongly Disagree</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5-Strongly Agree</option>
+      </select>
+      <h2>Question 7</h2>
+      <h4>You take committments seriously.</h4>
+      <select id="q7">
+        <option value="">Select an option</option>      
+        <option value="1">1-Strongly Disagree</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5-Strongly Agree</option>
+      </select>
+      <h2>Question 8</h2>
+      <h4>Do you find yourself being sarcastic?</h4>
+      <select id="q8">
+        <option value="">Select an option</option>      
+        <option value="1">1-Strongly Disagree</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5-Strongly Agree</option>
+      </select>
+      <h2>Question 9</h2>
+      <h4>People who have done evil should be met with same level of punishment.</h4>
+      <select id="q9">
+        <option value="">Select an option</option>      
+        <option value="1">1-Strongly Disagree</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5-Strongly Agree</option>
+      </select>
+      <h2>Question 10</h2>
+      <h4>Would you go any length to help your fellow friend(s)?</h4>
+      <select id="q10">
+        <option value="">Select an option</option>      
+        <option value="1">1-Strongly Disagree</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5-Strongly Agree</option>
+      </select>
+      <br><br>
+      <button class="btn btn-success" type="button" id="submit" style="width:100%; font-size: 24px">Sumbit!</button>
+      <br><br>
+      <div class="modal fade" id="modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title"></h2>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div>
+    <a id="apifriends" href="api/friends">API Friends List</a> |
+    <a id="githubre" href="api/waitlist">Github Repo</a>   
+    </div>
+  </div>
+    
+  <script type="text/javascript">
+    $("#apifriends").on("click", function() {
+      $.get("/api/friends", function(data) {
+        console.log(data);
+      });
+    });
+    $("#githubre").on("click", function() {
+      $.get("/api/waitlist", function(data) {
+        console.log(data);
+      });
+    });
+    $("#submit").on("click", function(){
+      event.preventDefault();
+      var qlength = $('#q1').val().length + $('#q2').val().length + $('#q3').val().length + $('#q4').val().length + $('#q5').val().length + $('#q6').val().length + $('#q7').val().length + $('#q8').val().length + $('#q9').val().length + $('#q10').val().length;
+
+
+      if ($("#name").val() !== "" && $("#photo").val() !== "" && qlength === 10){
+        var newFriend = {
+          name: $("#name").val().trim(),
+          photo: $("#photo").val().trim(),
+          scores: [
+          parseInt($("#q1").val()),
+          parseInt($("#q2").val()),
+          parseInt($("#q3").val()),
+          parseInt($("#q4").val()),
+          parseInt($("#q5").val()),
+          parseInt($("#q6").val()),
+          parseInt($("#q7").val()),
+          parseInt($("#q8").val()),
+          parseInt($("#q9").val()),
+          parseInt($("#q10").val())
+          ]
+        };
+        $.post("/api/friends", newFriend, function(data) {
+            $('.modal-title').html('Your best friend is...!');
+            $('.modal-body').html('<h4>' + data.name + '</h4><img src="' + data.photo + '" alt="Friend Photo" height=500><p>');
+            $('.modal').modal('show');
+          });
+      } else {
+        alert("Missing some fields!")
+      }
+    });
+  </script>
+</body>
+</html>
