@@ -143,18 +143,14 @@
         </div>
     <div>
     <a id="apifriends" href="api/friends">API Friends List</a> |
-    <a id="githubre" href="api/waitlist">Github Repo</a>   
+    <a id="githubre" href="api/waitlist">Github Repo</a> |
+    <a href="/home">Home</a> 
     </div>
   </div>
     
   <script type="text/javascript">
     $("#apifriends").on("click", function() {
       $.get("/api/friends", function(data) {
-        console.log(data);
-      });
-    });
-    $("#githubre").on("click", function() {
-      $.get("/api/waitlist", function(data) {
         console.log(data);
       });
     });
@@ -182,7 +178,7 @@
         };
         $.post("/api/friends", newFriend, function(data) {
             $('.modal-title').html('Your best friend is...!');
-            $('.modal-body').html('<h4>' + data.name + '</h4><img src="' + data.photo + '" alt="Friend Photo" height=500><p>');
+            $('.modal-body').html('<h4>' + data.name + '</h4><img src="' + data.photo + '" alt="No Picture" height=500><p>');
             $('.modal').modal('show');
           });
       } else {
